@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import Owner from './Pages/Owner';
+import Users from './Pages/Users';
+import { Fragment } from 'react';
 
 function App() {
+
+  const navigate = useNavigate();
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      {/* <button onClick={() => navigate('/owner')}>Owner</button>
+      <button>User</button> */}
+      <Routes>
+        <Route path='/owner' element={<Owner />}></Route>
+        <Route path='/user' element={<Users />}></Route>
+      </Routes>
+    </Fragment>
   );
 }
 
